@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "projects": {
+        "ang-validation": {
+            "projectType": "library",
+            "root": "projects/ang-validation",
+            "sourceRoot": "projects/ang-validation/src",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "tsConfig": "projects/ang-validation/tsconfig.lib.json",
+                        "project": "projects/ang-validation/ng-package.json"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+      "outDir": "../../dist/out-tsc",
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "inlineSources": true,
+      "target": "ES2022",
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "strict": true,
+      "skipLibCheck": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true
+    },
+    "angularCompilerOptions": {
+      "strictInjectionParameters": true,
+      "strictInputAccessModifiers": true
+    },
+    "exclude": ["src/test.ts", "**/*.spec.ts"]
+  }
+  

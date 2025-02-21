@@ -1,0 +1,42 @@
+<!-- <app-validation-observer #observer>
+  <app-validation-provider rules="required|min:6|max:128" [(value)]="password" (errors)="passwordErrors = $event">
+    <input [(ngModel)]="password" (blur)="validatePassword()" />
+  </app-validation-provider>
+</app-validation-observer>
+
+<button [disabled]="observer.invalid">Submit</button> -->
+
+<div>
+  <label for="password">New Password:</label>
+  <input
+    type="password"
+    id="password"
+    [ngModel]="password()"
+    (ngModelChange)="password.set($event); validate()"
+  />
+  
+  <!-- Display validation errors dynamically -->
+  <ul *ngIf="errors().length > 0">
+    <li *ngFor="let error of errors()">{{ error }}</li>
+  </ul>
+</div>
+
+
+
+
+
+<validation-observer #observer="observer">
+  <validation-provider
+    field="password"
+    [rules]="['required', 'min:6', 'max:128']"
+    [model]="password"
+  >
+    <input
+      type="password"
+      id="password"
+      [ngModel]="password()"
+      (ngModelChange)="password.set($event); validate()"
+      [ngClass]="{ 'border-red-500': errors().length > 0 }"
+    />
+  </validation-provider>
+</validation-observer>
